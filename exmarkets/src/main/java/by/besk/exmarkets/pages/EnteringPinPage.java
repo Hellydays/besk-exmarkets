@@ -8,8 +8,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class EnteringPinPage extends AbstractPage {
 
-	//hard-coded link 
-	private final String LOGIN_LINK = "https://demo4-dev.exmarkets.com/login?email=plakhotnik.o@gmail.com";
+	private final String BASE_URL = "https://demo4-dev.exmarkets.com";
 
 	@FindBy(css = "input[name = 'pin']")
 	WebElement inputPIN;
@@ -26,8 +25,11 @@ public class EnteringPinPage extends AbstractPage {
 
 	@Override
 	public void openPage() {
-		driver.navigate().to(LOGIN_LINK);
-
+		driver.navigate().to(BASE_URL);
+	}
+	
+	public void goToPIN(String userLink) {
+		driver.navigate().to(userLink);
 	}
 
 	public void enterPIN(String pin) throws InterruptedException {

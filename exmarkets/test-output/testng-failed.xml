@@ -3,13 +3,13 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test name="Default test(failed)">
     <classes>
-      <class name="by.besk.exmarkets_tests.UserCanLogin">
+      <class name="by.besk.exmarkets_tests.UserCanCreateAnOrder">
         <methods>
+          <include name="userCanLogin"/>
           <include name="setUpTest"/>
           <include name="finish"/>
-          <include name="userCanLogin"/>
         </methods>
-      </class> <!-- by.besk.exmarkets_tests.UserCanLogin -->
+      </class> <!-- by.besk.exmarkets_tests.UserCanCreateAnOrder -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
