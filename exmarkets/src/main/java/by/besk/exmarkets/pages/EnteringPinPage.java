@@ -6,17 +6,20 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class EnteringPIN extends AbstractPage {
+public class EnteringPinPage extends AbstractPage {
 
 	//hard-coded link 
 	private final String LOGIN_LINK = "https://demo4-dev.exmarkets.com/login?email=plakhotnik.o@gmail.com";
 
 	@FindBy(css = "input[name = 'pin']")
 	WebElement inputPIN;
+	
+	@FindBy(css = "button[type = 'submit']")
+	WebElement submitPIN;
 
 	WebDriverWait wait = new WebDriverWait(driver, 10);
 
-	public EnteringPIN(WebDriver driver) {
+	public EnteringPinPage(WebDriver driver) {
 		super(driver);
 		PageFactory.initElements(this.driver, this);
 	}
@@ -35,6 +38,10 @@ public class EnteringPIN extends AbstractPage {
 		inputPIN.click();
 		inputPIN.click();
 		inputPIN.sendKeys(pin);
+	}
+	
+	public void submitPIN() {
+		submitPIN.click();
 	}
 
 }

@@ -2,7 +2,7 @@ package by.besk.exmarkets_tests;
 
 import org.testng.annotations.Test;
 
-import by.besk.exmarkets.pages.EnteringPIN;
+import by.besk.exmarkets.pages.HomePage;
 
 public class UserCanLogin extends BaseTest {
 	
@@ -10,17 +10,7 @@ public class UserCanLogin extends BaseTest {
 	
 	@Test
 	public void userCanLogin() throws InterruptedException {
-		EnteringPIN emp = new EnteringPIN(driver);
-		emp.openPage();
-		emp.enterPIN(PIN_CODE);
-		
-		try {
-			Thread.sleep(5000);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		
+		HomePage homePage = steps.login(PIN_CODE);
 	}
 
 }
