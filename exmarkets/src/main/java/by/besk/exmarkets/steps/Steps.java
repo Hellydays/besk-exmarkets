@@ -6,6 +6,7 @@ import by.besk.exmarkets.entity.Order;
 import by.besk.exmarkets.entity.OrderDirection;
 import by.besk.exmarkets.pages.EnteringPinPage;
 import by.besk.exmarkets.pages.HomePage;
+import by.besk.exmarkets.pages.OpenOrdersPage;
 
 public class Steps {
 
@@ -37,10 +38,15 @@ public class Steps {
 		return homePage;
 	}
 	
-	// not finished and never called
-	public Order getOrderObject(String amount, String price, OrderDirection direction) {
-		Order order = new Order(amount, price, direction);
-		return order;
+	public OpenOrdersPage getOpenOrders() {
+		HomePage homePage = new HomePage(driver);
+		homePage.navigateToOpenOrders();
+		
+		driver.navigate().refresh();
+		
+		OpenOrdersPage openOrdersPage = new OpenOrdersPage(driver);
+		openOrdersPage.getListOfOpenOrders();
+		return openOrdersPage;
 	}
 
 }
