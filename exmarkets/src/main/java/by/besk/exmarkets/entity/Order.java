@@ -1,6 +1,5 @@
 package by.besk.exmarkets.entity;
 
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 public class Order {

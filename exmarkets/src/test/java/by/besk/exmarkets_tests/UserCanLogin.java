@@ -11,7 +11,7 @@ public class UserCanLogin extends BaseTest {
 	
 	@Test
 	public void userCanLogin() throws InterruptedException {
-		HomePage homePage = steps.login(LOGIN_LINK_USER_A, PIN_CODE);
+		HomePage homePage = stepsChrome.login(LOGIN_LINK_USER_A, PIN_CODE);
 	}
 
 }

@@ -48,5 +48,11 @@ public class Steps {
 		openOrdersPage.getListOfOpenOrders();
 		return openOrdersPage;
 	}
+	
+	public HomePage getRecentTrades() {
+		HomePage homePage = new HomePage(driver);
+		homePage.getRecentTrades();
+		return homePage;
+	}
 
 }

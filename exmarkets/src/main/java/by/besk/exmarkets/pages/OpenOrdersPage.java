@@ -4,6 +4,7 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeFormatterBuilder;
 import java.time.temporal.ChronoField;
+import java.util.ArrayList;
 import java.util.List;
 
 import org.openqa.selenium.By;
@@ -30,8 +31,9 @@ public class OpenOrdersPage extends AbstractPage {
 
 	}
 
-	public void getListOfOpenOrders() {
+	public List<Order> getListOfOpenOrders() {
 		List<WebElement> orderPropertiesList = null;
+		List<Order> usersOpenOrders = new ArrayList<>();
 		Order order = new Order();
 		if (listOfOpenOrders != null && listOfOpenOrders.size() > 0) {
 			for (WebElement element : listOfOpenOrders) {
@@ -53,6 +55,7 @@ public class OpenOrdersPage extends AbstractPage {
 			System.out.println("No Open Orders");
 		}
 
+		return usersOpenOrders;
 	}
 
 	public OrderDirection getOrderDirection(String directionString) {
