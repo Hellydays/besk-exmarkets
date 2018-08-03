@@ -23,9 +23,9 @@ public class UserCanCreateAnOrder extends BaseTest {
 		startChrome();
 	
 		HomePage homePage = stepsChrome.login(LOGIN_LINK_USER_1, PIN_CODE_USER_1);
-//		
-//		//to re-check what can be done here to avoid using .sleep:
-		stepsChrome.createLimitOrder("1.2", "0.05566", OrderDirection.SELL);
+		
+		//to re-check what can be done here to avoid using .sleep:
+		stepsChrome.createLimitOrder("1.2", "0.5566", OrderDirection.SELL);
 		Thread.sleep(1000);
 		stepsChrome.createLimitOrder("1", "0.5564", OrderDirection.SELL);
 		Thread.sleep(1000);
